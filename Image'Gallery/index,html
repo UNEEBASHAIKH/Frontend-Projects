@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Image Gallery</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<body>
+  <div class="container">
+    <header>
+      <h1>Image Gallery</h1>
+      <p>Hover for effects. Click to open the lightbox. Use filters to explore categories.</p>
+    </header>
+
+    <!-- Filters -->
+    <nav class="filters" aria-label="Image filters">
+      <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+      <button class="filter-btn" data-filter="nature" aria-pressed="false">Nature</button>
+      <button class="filter-btn" data-filter="city" aria-pressed="false">City</button>
+      <button class="filter-btn" data-filter="people" aria-pressed="false">People</button>
+    </nav>
+
+    <!-- Gallery Grid -->
+    <section class="gallery" aria-label="Image gallery">
+      <!-- Replace src with your images; categories via data-category -->
+      <article class="card" data-category="nature" data-index="0" tabindex="0" role="button" aria-label="Open image Nature Lake">
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop" alt="Serene mountain lake at dusk" />
+        <div class="overlay"></div>
+        <div class="title">Nature — Lake</div>
+        <div class="meta">
+          <span class="badge">Nature</span>
+        </div>
+      </article>
+
+      <article class="card" data-category="city" data-index="1" tabindex="0" role="button" aria-label="Open image City Skyline">
+        <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1200&auto=format&fit=crop" alt="City skyline with sunset glow" />
+        <div class="overlay"></div>
+        <div class="title">City — Skyline</div>
+        <div class="meta">
+          <span class="badge">City</span>
+        </div>
+      </article>
+
+      <article class="card" data-category="people" data-index="2" tabindex="0" role="button" aria-label="Open image Portrait">
+        <img src="https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?q=80&w=1200&auto=format&fit=crop" alt="Portrait of a person with soft light" />
+        <div class="overlay"></div>
+        <div class="title">People — Portrait</div>
+        <div class="meta">
+          <span class="badge">People</span>
+        </div>
+      </article>
+
+      <article class="card" data-category="nature" data-index="3" tabindex="0" role="button" aria-label="Open image Forest Path">
+        <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1200&auto=format&fit=crop" alt="Forest path with morning fog" />
+        <div class="overlay"></div>
+        <div class="title">Nature — Forest</div>
+        <div class="meta">
+          <span class="badge">Nature</span>
+        </div>
+      </article>
+
+      <article class="card" data-category="city" data-index="4" tabindex="0" role="button" aria-label="Open image Street Night">
+        <img src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade?q=80&w=1200&auto=format&fit=crop" alt="Neon-lit street at night" />
+        <div class="overlay"></div>
+        <div class="title">City — Night Street</div>
+        <div class="meta">
+          <span class="badge">City</span>
+        </div>
+      </article>
+
+      <article class="card" data-category="people" data-index="5" tabindex="0" role="button" aria-label="Open image Candid Smile">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop" alt="Candid portrait with smile" />
+        <div class="overlay"></div>
+        <div class="title">People — Candid</div>
+        <div class="meta">
+          <span class="badge">People</span>
+        </div>
+      </article>
+
+      <article class="card" data-category="nature" data-index="6" tabindex="0" role="button" aria-label="Open image Desert Dunes">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="Desert dunes under golden light" />
+        <div class="overlay"></div>
+        <div class="title">Nature — Desert</div>
+        <div class="meta">
+          <span class="badge">Nature</span>
+        </div>
+      </article>
+
+      <article class="card" data-category="city" data-index="7" tabindex="0" role="button" aria-label="Open image Bridge">
+        <img src="https://images.unsplash.com/photo-1473654729523-203e25dfda10?q=80&w=1200&auto=format&fit=crop" alt="Iconic bridge over water at sunset" />
+        <div class="overlay"></div>
+        <div class="title">City — Bridge</div>
+        <div class="meta">
+          <span class="badge">City</span>
+        </div>
+      </article>
+    </section>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" id="lightbox">
+    <div class="lightbox-content">
+      <img class="lightbox-img" id="lightboxImg" alt="Selected image" />
+      <div class="lightbox-toolbar">
+        <div class="lb-left">
+          <button class="btn" id="closeBtn" aria-label="Close">✕ Close</button>
+        </div>
+        <div class="counter" id="counter" aria-live="polite">1 / 8</div>
+        <div class="lb-right">
+          <button class="btn" id="prevBtn" aria-label="Previous">← Prev</button>
+          <button class="btn primary" id="nextBtn" aria-label="Next">Next →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
